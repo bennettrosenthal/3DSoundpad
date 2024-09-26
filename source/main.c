@@ -75,8 +75,8 @@ int main(int argc, char **argv)
 		//Read the touch screen coordinates
 		hidTouchRead(&touch);
 
-		// update current zone
-		if (touch.px != 0 || touch.px != 0) {
+		// update current zone if input detected (not 0,0)
+		if (touch.px != 0 || touch.py != 0) {
 			currentZone = updateZone(touch.px, touch.py);
 		}
 
